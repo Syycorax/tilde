@@ -17,12 +17,12 @@
     /**
      * The delimiter between the hours, minutes and seconds on the clock.
      */
-    clockDelimiter: ' – ',
+    clockDelimiter: ' : ',
 
     /**
      * Show seconds on the clock. A monospaced font is recommended for this.
      */
-    clockShowSeconds: false,
+    clockShowSeconds: true,
 
     /**
      * Show AM/PM indication when CONFIG.clockTwentyFourHours is false.
@@ -41,7 +41,7 @@
      *
      * https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
      */
-    clockTimeZone: undefined,
+    clockTimeZone: "Europe/Podgorica",
 
     /**
      * Type this to toggle the help menu.
@@ -57,7 +57,7 @@
     /**
      * Open triggered queries in a new tab.
      */
-    queryNewTab: true,
+    queryNewTab: false,
 
     /**
      * The delimiter between a command key and a path. For example, you'd type
@@ -78,6 +78,7 @@
      */
     scripts: {
       q: ['bing', 'yah', 'eco', 'ddg', '*'],
+      d: ['ddg', '*'],
     },
 
     /**
@@ -104,25 +105,17 @@
     /**
      * Max number of suggestions that will ever be shown.
      */
-    suggestionLimit: 4,
+    suggestionLimit: 5,
 
     /**
      * Default search suggestions for the specified queries.
      */
     suggestionDefaults: {
       0: ["0'8000", "0'8080"],
-      a: ['a/cognito/v2/idp/user-pools', 'a/dynamodbv2#item-explorer'],
-      c: ['c/calendar/u/1/r', 'c/calendar/u/2/r'],
-      d: ['d/drive/u/1/my-drive', 'd/drive/u/2/my-drive'],
-      e: ['e/brand/national-geographic', 'e/brand/marvel', 'e/brand/star-wars'],
-      g: ['g/trending', 'g/ossu', 'g/cadejscroggins/tilde', 'gist.github.com'],
-      j: ['j/popular', 'j/popular/lastweek', 'j/tags'],
-      k: ['k/u/1', 'k/u/2'],
-      m: ['m/mail/u/1', 'm/mail/u/2'],
+      g: ['g/trending', 'g/Syycorax', 'gist.github.com'],
       o: ['o/discover/sets/new-for-you', 'o/discover/sets/weekly'],
-      p: ['p/beema.finance'],
       r: ['r/r/startpages', 'r/r/unixporn', 'r/r/onebag', 'r/r/fujix'],
-      s: ['s/collection/tracks', 's/playlist/37i9dQZEVXcXr3r4FYT3J7'],
+      s: ['s/collection/tracks'],
       u: ['u/explore', 'u/backgrounds'],
       y: ['y/feed/trending'],
     },
@@ -148,13 +141,6 @@
         url: 'https://www.netflix.com/browse',
       },
       {
-        hues: ['0', '350'],
-        key: 'c',
-        name: 'Calendar',
-        search: '/calendar/u/0/r/search?q={}',
-        url: 'https://calendar.google.com/calendar/u/0/r',
-      },
-      {
         hues: ['5', '345'],
         key: 'y',
         name: 'YouTube',
@@ -177,7 +163,7 @@
       },
       {
         hues: ['337', '317'],
-        key: 'b',
+        key: 'd',
         name: 'Dribbble',
         search: '/search/{}',
         url: 'https://dribbble.com/shots/popular',
@@ -208,12 +194,6 @@
         url: 'https://www.reddit.com',
       },
       {
-        hues: ['226', '236'],
-        key: 'e',
-        name: 'Disney',
-        url: 'https://www.disneyplus.com/home',
-      },
-      {
         hues: ['217', '237'],
         key: 'w',
         name: 'Wikipedia',
@@ -230,8 +210,9 @@
       {
         hues: ['243', '204'],
         key: 'p',
-        name: 'Plausible',
-        url: 'https://plausible.io',
+        name: 'Prime Video',
+        search: '/search?q={}',
+        url: 'https://www.primevideo.com',
       },
       {
         hues: ['192', '232'],
@@ -242,9 +223,8 @@
       {
         hues: ['201', '221'],
         key: 'l',
-        name: 'LinkedIn',
-        search: '/search/results/all/?keywords={}',
-        url: 'https://www.linkedin.com',
+        name: 'mbn',
+        url: 'https://monbureaunumerique.fr/',
       },
       {
         hues: ['198', '218'],
@@ -257,8 +237,8 @@
         hues: ['217', '197'],
         key: 'm',
         name: 'Mail',
-        search: '/mail/u/0/?q={}#search/{}',
-        url: 'https://mail.google.com/mail/u/0',
+        search: '/u/0/all-mail#keyword={}',
+        url: 'https://protonmail.com',
       },
       {
         hues: ['203', '183'],
@@ -267,20 +247,7 @@
         search: '/search?q={}',
         url: 'https://twitter.com/home',
       },
-      {
-        hues: ['166', '146'],
-        key: '+',
-        name: 'Khan',
-        search: '/search?page_search_query={}',
-        url: 'https://www.khanacademy.org',
-      },
-      {
-        hues: ['136', '156'],
-        key: 'd',
-        name: 'Drive',
-        search: '/drive/u/0/search?q={}',
-        url: 'https://drive.google.com/drive/u/0/my-drive',
-      },
+
       {
         hues: ['124', '164'],
         key: 's',
@@ -289,29 +256,9 @@
         url: 'https://open.spotify.com',
       },
       {
-        hues: ['90'],
-        key: 'j',
-        name: 'Hypem',
-        search: '/search/{}',
-        url: 'https://hypem.com/latest',
-      },
-      {
-        hues: ['45', '40'],
-        key: 'k',
-        name: 'Keep',
-        search: '/u/0/#search/text={}',
-        url: 'https://keep.google.com/u/0',
-      },
-      {
-        hues: ['36', '26'],
-        key: 'a',
-        name: 'AWS',
-        url: 'https://us-west-2.console.aws.amazon.com/console/home',
-      },
-      {
         hues: ['32', '22'],
         key: 'o',
-        name: 'Sounds',
+        name: 'Soundclound',
         search: '/search?q={}',
         url: 'https://soundcloud.com/discover',
       },
@@ -336,27 +283,9 @@
       },
       {
         color: 'var(--base-background)',
-        key: 'bing',
-        search: '/search?q={}',
-        url: 'https://www.bing.com',
-      },
-      {
-        color: 'var(--base-background)',
         key: 'ddg',
         search: '/?q={}',
         url: 'https://duckduckgo.com',
-      },
-      {
-        color: 'var(--base-background)',
-        key: 'eco',
-        search: '/search?q={}',
-        url: 'https://www.ecosia.org',
-      },
-      {
-        color: 'var(--base-background)',
-        key: 'yah',
-        search: '/search?p={}',
-        url: 'https://search.yahoo.com',
       },
       {
         key: '0',
@@ -510,7 +439,7 @@
     height: 100%;
   }
 
-  .center > * {
+  .center>* {
     margin: auto;
   }
 
@@ -637,12 +566,7 @@
 <div class="center">
   <time class="clock" id="clock" />
 </div>
-<form
-  autocomplete="off"
-  class="center overlay search-form"
-  id="search-form"
-  spellcheck="false"
->
+<form autocomplete="off" class="center overlay search-form" id="search-form" spellcheck="false">
   <div class="search-form-content">
     <input class="search-input" id="search-input" title="search" type="text" />
     <ul class="search-suggestions" id="search-suggestions" />
@@ -967,9 +891,9 @@
 
         const suggestionHtml = matched
           ? suggestion.replace(
-              match,
-              `<span class="search-suggestion-match">${matched[0]}</span>`
-            )
+            match,
+            `<span class="search-suggestion-match">${matched[0]}</span>`
+          )
           : suggestion;
 
         return `
