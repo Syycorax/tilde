@@ -320,7 +320,7 @@
 
 <style>
   :root {
-    --base-background: #111;
+    --base-background: #fff;
     --base-border-radius: 4px;
     --base-font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue,
       Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif;
@@ -328,7 +328,7 @@
     --base-font-weight-black: 900;
     --base-font-weight-bold: 700;
     --base-font-weight-normal: 400;
-    --base-foreground: #fff;
+    --base-foreground: #000;
     --clock-font-size: 3rem;
     --command-background: #222;
     --command-color-alpha: 1;
@@ -396,6 +396,11 @@
     background: var(--base-background);
     color: var(--base-foreground);
   }
+
+  body.dark{
+    background: var(--base-foreground);
+    color: var(--base-background);
+  } 
 
   input,
   button {
@@ -575,6 +580,16 @@
 <aside class="center help overlay" id="help" />
 
 <script>
+  let dark = window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", e => {
+    document.body.classList.toggle("dark", e.matches);
+  });
+  let body = document.body;
+  if(dark) {
+    body.classList.add("dark");
+  } else {
+    body.classList.remove("dark");
+  }
+
   const $ = {
     bodyClassAdd: (c) => $.el('body').classList.add(c),
     bodyClassRemove: (c) => $.el('body').classList.remove(c),
