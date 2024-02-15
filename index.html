@@ -3,7 +3,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex" />
 <title>~</title>
-
+</head>
+<style>
+  @import url(https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap);
+</style>
 <script>
   const CONFIG = {
     /**
@@ -17,7 +20,7 @@
     /**
      * The delimiter between the hours, minutes and seconds on the clock.
      */
-    clockDelimiter: ' : ',
+    clockDelimiter: ' : ',// Those are thin spaces: U+2009
 
     /**
      * Show seconds on the clock. A monospaced font is recommended for this.
@@ -112,11 +115,7 @@
      */
     suggestionDefaults: {
       0: ["0'8000", "0'8080"],
-      g: ['g/trending', 'g/Syycorax', 'gist.github.com'],
-      r: ['r/r/startpages', 'r/r/unixporn', 'r/r/onebag', 'r/r/fujix'],
-      s: ['s/collection/tracks'],
-      u: ['u/explore', 'u/backgrounds'],
-      y: ['y/feed/trending'],
+      g: ['g/Syycorax',],
     },
 
     /**
@@ -151,33 +150,18 @@
         key: '=',
         name: 'Wolfram',
         search: '/input/?i={}',
-        url: 'https://wolfreealpha.github.io/',
+        url: 'https://wolfreealpha.gitlab.io/',
       },
       {
-        hues: ['349', '329'],
-        key: '1',
-        name: 'OPL',
-        search: '/?s={}',
-        url: 'https://onepagelove.com/inspiration',
-      },
-      {
-        hues: ['337', '317'],
-        key: 'd',
-        name: 'Dribbble',
-        search: '/search/{}',
-        url: 'https://dribbble.com/shots/popular',
-      },
-      {
-        hues: ['266', '286'],
-        key: 'f',
-        name: 'Figma',
-        url: 'https://www.figma.com/files/recent',
-      },
-      {
-        hues: ['230', '280'],
-        key: 'i',
-        name: 'Instagram',
-        url: 'https://www.instagram.com',
+        hues: ["266", "286"],
+        key: "f",
+        name: "Figma",
+        url: "https://www.figma.com/files/recent"
+      }, {
+        hues: ["230", "280"],
+        key: "i",
+        name: "Instagram",
+        url: "https://www.instagram.com"
       },
       {
         hues: ['264', '244'],
@@ -214,12 +198,6 @@
         url: 'https://www.primevideo.com',
       },
       {
-        hues: ['192', '232'],
-        key: 'z',
-        name: 'Telegram',
-        url: 'https://web.telegram.org/z/',
-      },
-      {
         hues: ['201', '221'],
         key: 'l',
         name: 'mbn',
@@ -237,29 +215,20 @@
         key: 'm',
         name: 'Mail',
         search: '/u/0/all-mail#keyword={}',
-        url: 'https://protonmail.com',
+        url: 'https://mail.proton.me/u/0/inbox',
       },
       {
         hues: ['203', '183'],
         key: 't',
         name: 'Twitter',
         search: '/search?q={}',
-        url: 'https://twitter.com/home',
-      },
-
-      {
-        hues: ['124', '164'],
-        key: 's',
-        name: 'Spotify',
-        search: '/search/{}',
-        url: 'https://open.spotify.com',
+        url: 'https://x.com/home',
       },
       {
-        hues: ['32', '22'],
-        key: 'o',
-        name: 'ocaml',
-        search: '#code/{}',
-        url: 'https://try.ocamlpro.com/',
+        hues: ["217", "183"],
+        key: "s",
+        name: "Snapdrop",
+        url: "https://snapdrop.net"
       },
       {
         hues: ['13', '33'],
@@ -292,11 +261,17 @@
         url: 'http://localhost:3000',
       },
       {
-        key: 'u',
-        name: 'Unsplash',
-        search: '/search/{}',
-        url: 'https://unsplash.com/images',
+        hues: ["120.56"],
+        key: "o",
+        name: "Overleaf",
+        url: "https://overleaf.com/project"
       },
+      {
+        hues: ["164.32"],
+        key: "c",
+        name: "ChatGPT",
+        url: "https://chat.openai.com/"
+      }
     ].map((command) => {
       const hsla = (hue, saturation = 'var(--command-color-saturation)') =>
         `hsla(${hue}, ${saturation}, var(--command-color-lightness), var(--command-color-alpha))`;
@@ -319,16 +294,16 @@
 
 <style>
   :root {
+    font-variant-numeric: tabular-nums;
     --base-background: #000;
     --base-border-radius: 4px;
-    --base-font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue,
-      Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif;
+    --base-font-family: 'Space Grotesk', sans-serif;
     --base-font-size: 17px;
     --base-font-weight-black: 900;
     --base-font-weight-bold: 700;
     --base-font-weight-normal: 400;
     --base-foreground: #fff;
-    --clock-font-size: 3rem;
+    --clock-font-size: 8rem;
     --command-background: #222;
     --command-color-alpha: 1;
     --command-color-gradient: 135deg;
@@ -361,7 +336,7 @@
 
   @media (min-width: 900px) {
     :root {
-      --clock-font-size: 7rem;
+      --clock-font-size: 8rem;
       --help-grid-columns: 3;
       --search-input-font-size: 3rem;
       --suggestions-flex-direction: row;
@@ -379,9 +354,9 @@
   }
 
   html {
-    font-family: var(--base-font-family);
+    font-family: 'Space Grotesk', sans-serif;
     font-size: var(--base-font-size);
-    font-weight: var(--base-font-weight-normal);
+    font-weight: var(--base-font-weight-normal)
   }
 
   body {
@@ -402,7 +377,7 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    background: transparent;
+    background: 0 0;
     color: inherit;
     font-family: var(--base-font-family);
     font-weight: var(--base-font-weight-normal);
@@ -436,10 +411,9 @@
     display: flex;
     width: 100%;
     height: 100%;
-  }
-
-  .center>* {
-    margin: auto;
+    flex-direction: column;
+    gap: 6em;
+    align-items: center
   }
 
   .overlay {
@@ -455,6 +429,13 @@
     display: block;
     font-size: var(--clock-font-size);
     cursor: pointer;
+    letter-spacing: -.25rem;
+    font-weight: 600;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%)
   }
 
   .help {
@@ -494,7 +475,7 @@
   }
 
   .command:hover .command-key {
-    background: transparent;
+    background: 0 0
   }
 
   .command-key {
@@ -527,6 +508,11 @@
     font-size: var(--search-input-font-size);
     font-weight: var(--base-font-weight-black);
     text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%)
   }
 
   .search-suggestions {
@@ -558,21 +544,117 @@
   }
 
   .search-suggestion-match {
-    font-weight: var(--base-font-weight-normal);
+    font-weight: var(--base-font-weight-normal)
+  }
+
+  .timer_button {
+    color: var(--base-background);
+    background: var(--base-foreground);
+    border-radius: 50px;
+    border: 1px solid var(--base-foreground);
+    width: 180px;
+    height: 48px;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1;
+    margin: 0;
+    position: absolute;
+    top: 70%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%)
+  }
+
+  .timer_button:hover {
+    color: var(--base-foreground);
+    background: var(--base-background);
+    border: 1px solid var(--base-foreground);
+    border-radius: 50px;
+    width: 180px;
+    height: 48px;
+    cursor: pointer
   }
 </style>
+<html>
 
-<div class="center">
-  <time class="clock" id="clock" />
-</div>
-<form autocomplete="off" class="center overlay search-form" id="search-form" spellcheck="false">
-  <div class="search-form-content">
-    <input class="search-input" id="search-input" title="search" type="text" />
-    <ul class="search-suggestions" id="search-suggestions" />
-  </div>
-</form>
-<aside class="center help overlay" id="help" />
+<body>
+  <div class=center><time class=clock id=clock></time><time class=clock id=timer style=display:none>00:00</time><button
+      class=timer_button id=timer_button>Start Pomo</button></div>
+  <form autocomplete=off class="center overlay search-form" id=search-form spellcheck=false>
+    <div class=search-form-content>
+      <input class=search-input id=search-input title=search>
+      <ul class=search-suggestions id=search-suggestions>
+    </div>
+  </form>
+  <aside class="center help overlay" id=help>
+</body>
 
+</html>
+<script>
+  var holding, stop_timeout;
+  let work = 25,
+    breakTime = 5,
+    holdTrig = 0,
+    isWork = !0,
+    // This might be the dumbest way to do this, but it works.
+    colors = ["#000000", "#100000", "#200000", "#300000", "#400000", "#500000", "#600000", "#700000", "#800000", "#900000", "#A00000", "#B00000", "#C00000", "#D00000", "#E00000", "#F00000", "#FF0000"],
+    letters = ["     ", "     ", "     ", "S    ", "S    ", "S    ", "St   ", "St   ", "St   ", "Sto  ", "Sto  ", "Sto  ", "Stop ", "Stop ", "Stop ", "Stop?", "Stop?"];
+  flag = !1;
+  var timer_button = document.getElementById("timer_button"),
+    timer = document.getElementById("timer");
+  let timerInterval;
+
+  function stop_button() {
+    timer_button.innerHTML = "Stop?", timer_button.style.color = "white", timer_button.style.backgroundColor = "red", timer_button.style.border = "1px solid red", holdTrig = 0
+  }
+
+  function holdStart() {
+    "Resume" != timer_button.innerHTML && "Start Pomo" != timer_button.innerHTML && "Stop" != timer_button.innerHTML && (holding = setInterval((function () {
+      holdTrig < colors.length && ("Pause" == timer_button.innerHTML || letters.includes(timer_button.innerHTML)) ? (timer_button.style.backgroundColor = colors[holdTrig], timer_button.innerHTML = letters[holdTrig], holdTrig++) : clearInterval(holding)
+    }), 100), stop_timeout = setTimeout((function () {
+      stop_button(), timer_button.addEventListener("click", (function (t) {
+        t.stopPropagation()
+      }))
+    }), 3e3))
+  }
+
+  function holdEnd() {
+    clearTimeout(stop_timeout), clearInterval(holding), letters.includes(timer_button.innerHTML) && "Stop?" != timer_button.innerHTML && (timer_button.innerHTML = "Pause", timer_button.style.color = "white", timer_button.style.backgroundColor = "black", timer_button.style.border = "1px solid white", holdTrig = 0)
+  }
+
+  function back_to_clock() {
+    location.reload()
+  }
+
+  function timer_manager() {
+    timerInterval = setInterval((function () {
+      if (console.log("timer manager"), seconds = parseInt(timer.innerHTML.split(":")[1]), minutes = parseInt(timer.innerHTML.split(":")[0]), 0 == seconds) {
+        if (0 == minutes) return isWork = !isWork, isWork ? (timer.innerHTML = work + ":00", document.body.style.backgroundImage = none, document.body.style.backgroundColor = "#000000") : (document.body.style.backgroundImage = "url(https://images.unsplash.com/photo-1515705576963-95cad62945b6)", document.body.style.backgroundSize = "cover", timer.innerHTML = breakTime + ":00"), void new Audio("https://cdn.pixabay.com/download/audio/2023/05/30/audio_870bea9c71.mp3").play();
+        minutes--, seconds = 59
+      } else seconds--;
+      seconds = seconds < 10 ? "0" + seconds : seconds, minutes = minutes < 10 ? "0" + minutes : minutes, timer.innerHTML = minutes + ":" + seconds
+    }), 1e3)
+  }
+
+  function start_timer() {
+    timer_button.innerHTML = "Pause", timer_button.style.color = "white", timer_button.style.backgroundColor = "black", timer_button.style.border = "1px solid white", document.getElementById("clock").style.display = "none", timer.innerHTML = work + ":00", timer.style.display = "block", console.log("start timer"), timer_manager()
+  }
+
+  function resume() {
+    timer_manager(), color = 0, holdTrig = 0, timer_button.innerHTML = "Pause", timer_button.style.color = "white", timer_button.style.backgroundColor = "black", timer_button.style.border = "1px solid white"
+  }
+
+  function pause() {
+    clearInterval(timerInterval), timer_button.innerHTML = "Resume", timer_button.style.color = "black", timer_button.style.backgroundColor = "white", timer_button.style.border = "1px solid black", timer_button.addEventListener("mousedown", holdStart), timer_button.addEventListener("mouseup", holdEnd)
+  }
+
+  function stopTimer() {
+    back_to_clock()
+  }
+  timer_button.onclick = function () {
+    "Start Pomo" == timer_button.innerHTML ? start_timer() : "Resume" == timer_button.innerHTML ? resume() : "Pause" == timer_button.innerHTML ? pause() : "Stop?" == timer_button.innerHTML && (console.log(flag), 1 == flag ? back_to_clock() : flag = !0)
+  }, timer_button.addEventListener("mousedown", holdStart), timer_button.addEventListener("mouseup", holdEnd)
+</script>
 <script>
   const $ = {
     bodyClassAdd: (c) => $.el('body').classList.add(c),
