@@ -132,6 +132,12 @@
      */
     commands: [
       {
+        hues: ['197', '44'],
+        key: "a",
+        name: "adh6",
+        url: "https://adh6.minet.net"
+      },
+      {
         hues: ['0', '0'],
         key: 'x',
         name: 'Netflix',
@@ -150,7 +156,7 @@
         key: '=',
         name: 'Wolfram',
         search: '/input/?i={}',
-        url: 'https://wolfreealpha.gitlab.io/',
+        url: 'https://wolfree.pages.dev/input/',
       },
       {
         hues: ["266", "286"],
@@ -170,7 +176,7 @@
         url: 'https://www.twitch.tv/',
       },
       {
-        hues: ['254', '234'],
+        hues: ['20', '16'],
         key: 'r',
         name: 'Reddit',
         search: '/search?q={}',
@@ -184,24 +190,24 @@
         url: 'https://fr.wikipedia.org/',
       },
       {
-        hues: ['214', '234'],
+        hues: ['220'],
         key: 'g',
         name: 'GitHub',
         search: '/search?q={}',
         url: 'https://github.com',
       },
       {
-        hues: ['243', '204'],
+        hues: ['217', '197'],
         key: 'p',
-        name: 'Prime Video',
-        search: '/search?q={}',
-        url: 'https://www.primevideo.com',
+        name: 'protonmail',
+        search: '/u/0/all-mail#keyword={}',
+        url: 'https://mail.proton.me/u/0/inbox',
       },
       {
         hues: ['201', '221'],
         key: 'l',
-        name: 'mbn',
-        url: 'https://monbureaunumerique.fr/',
+        name: 'linkedin',
+        url: 'https://linkedin.com/',
       },
       {
         hues: ['198', '218'],
@@ -211,18 +217,17 @@
         url: 'https://developer.mozilla.org/en-US',
       },
       {
-        hues: ['217', '197'],
+        hues: ['217', '5'],
         key: 'm',
-        name: 'Mail',
-        search: '/u/0/all-mail#keyword={}',
-        url: 'https://mail.proton.me/u/0/inbox',
+        name: 'Gmail',
+        search: 'mail/u/0/#search/{}',
+        url: 'https://mail.google.com/mail/u/0/#inbox',
       },
       {
         hues: ['203', '183'],
         key: 't',
-        name: 'Twitter',
-        search: '/search?q={}',
-        url: 'https://x.com/home',
+        name: 'twitter',
+        url: 'https://twitter.com/home',
       },
       {
         hues: ["217", "183"],
@@ -271,7 +276,14 @@
         key: "c",
         name: "ChatGPT",
         url: "https://chat.openai.com/"
-      }
+      },
+      {
+        hues: ['180', '300'],
+        key: "e",
+        name: "Ecampus",
+        url: "https://ecampus.imtbs-tsp.eu"
+      },
+
     ].map((command) => {
       const hsla = (hue, saturation = 'var(--command-color-saturation)') =>
         `hsla(${hue}, ${saturation}, var(--command-color-lightness), var(--command-color-alpha))`;
